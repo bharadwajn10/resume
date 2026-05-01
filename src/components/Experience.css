@@ -1,0 +1,132 @@
+.experience-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.experience-entry {
+  background: var(--card-background, rgba(255, 255, 255, 0.05));
+  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--primary);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.experience-entry:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.experience-entry:focus-within {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.experience-title-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.experience-position {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  margin: 0 0 var(--space-xs) 0;
+  line-height: var(--line-height-tight);
+}
+
+.experience-company {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text);
+  margin: 0;
+}
+
+.experience-duration {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary, rgba(255, 255, 255, 0.7));
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+}
+
+.experience-location {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary, rgba(255, 255, 255, 0.7));
+  margin: 0 0 var(--space-md) 0;
+}
+
+.experience-responsibilities,
+.experience-achievements {
+  margin-top: var(--space-md);
+}
+
+.responsibilities-title,
+.achievements-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.responsibilities-list,
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.responsibilities-list li,
+.achievements-list li {
+  padding-left: var(--space-xl);
+  position: relative;
+  margin-bottom: var(--space-sm);
+  color: var(--text);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+.responsibilities-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.achievements-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent, var(--primary));
+  font-weight: var(--font-weight-bold);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-duration {
+    white-space: normal;
+  }
+
+  .experience-position {
+    font-size: var(--font-size-lg);
+  }
+}

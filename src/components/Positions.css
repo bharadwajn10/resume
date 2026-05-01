@@ -1,0 +1,114 @@
+.positions-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.positions-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.position-entry {
+  background: var(--card-background, rgba(255, 255, 255, 0.05));
+  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--primary);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.position-entry:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.position-entry:focus-within {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.position-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.position-title-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.position-role {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  margin: 0 0 var(--space-xs) 0;
+  line-height: var(--line-height-tight);
+}
+
+.position-organization {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text);
+  margin: 0;
+}
+
+.position-duration {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary, rgba(255, 255, 255, 0.7));
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+}
+
+.position-responsibilities {
+  margin-top: var(--space-md);
+}
+
+.responsibilities-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.responsibilities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.responsibilities-list li {
+  padding-left: var(--space-xl);
+  position: relative;
+  margin-bottom: var(--space-sm);
+  color: var(--text);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+.responsibilities-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .position-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .position-duration {
+    white-space: normal;
+  }
+
+  .position-role {
+    font-size: var(--font-size-lg);
+  }
+}

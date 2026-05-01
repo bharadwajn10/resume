@@ -10,3 +10,11 @@
 - Dean's List for Academic Excellence
 - Published research paper on Machine Learning
 - Winner of University Hackathon 2023
+
+---
+
+## High School Diploma
+**Institution:** School Name
+**Location:** City, Country
+**Duration:** 2018 - 2020
+**Grade:** 95%

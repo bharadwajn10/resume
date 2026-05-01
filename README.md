@@ -62,6 +62,8 @@ All resume content is stored in Markdown files in the `content/` directory:
 
 Simply edit these files to update your resume content. No code changes required!
 
+**For detailed instructions on editing content files, see [CONTENT_GUIDE.md](CONTENT_GUIDE.md).**
+
 ## Project Structure
 
 ```
@@ -81,7 +83,23 @@ github-master-resume/
 
 ## Deployment
 
-The project is configured for automatic deployment to GitHub Pages using GitHub Actions. Push to the main branch to trigger deployment.
+The project deploys automatically to GitHub Pages via GitHub Actions on every push to `main`.
+
+### First-time setup
+
+1. **Enable GitHub Pages** in your repository:
+   - Go to **Settings → Pages**
+   - Under "Build and deployment", set Source to **GitHub Actions**
+
+2. **Set the base path** (required if not using a custom domain):
+   - Go to **Settings → Variables → Actions**
+   - Add a repository variable: `VITE_BASE_PATH` = `/<your-repo-name>/`
+   - Example: if your repo is `github.com/you/my-resume`, set it to `/my-resume/`
+   - If you have a custom domain (e.g. `resume.example.com`), set it to `/` instead
+
+3. **Push to `main`** — the workflow will run tests, build, and deploy automatically.
+
+The deployed site will be available at `https://<username>.github.io/<repo-name>/` (or your custom domain).
 
 ## Technologies
 

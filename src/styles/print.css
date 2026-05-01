@@ -1,0 +1,78 @@
+/**
+ * Print stylesheet - Requirements 8.5
+ * Ensures the currently active resume mode is shown cleanly when printing.
+ * The toggle control and other non-essential UI are hidden.
+ */
+@media print {
+  /* Reset page margins */
+  @page {
+    margin: 1.5cm 1.5cm 1.5cm 1.5cm;
+    size: A4 portrait;
+  }
+
+  /* Hide interactive / navigation elements */
+  .mode-toggle-container,
+  .skip-link,
+  .sr-only,
+  .app-footer,
+  .loading-spinner,
+  .retry-button {
+    display: none !important;
+  }
+
+  /* Remove backgrounds and shadows for ink efficiency */
+  body,
+  .app,
+  .content-section,
+  .resume-header {
+    background: #fff !important;
+    background-image: none !important;
+    color: #000 !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure full-width layout */
+  .app-main,
+  .resume-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Section spacing */
+  .content-section {
+    padding: 0.5cm 0 !important;
+    border-radius: 0 !important;
+    page-break-inside: avoid;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4 {
+    color: #000 !important;
+    page-break-after: avoid;
+  }
+
+  /* Links: show URL after link text */
+  a[href]::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.75em;
+    color: #555;
+  }
+
+  /* But not for icon-only or internal links */
+  a[href^="#"]::after,
+  a[href^="mailto:"]::after,
+  a[href^="tel:"]::after {
+    content: '';
+  }
+
+  /* Avoid breaking articles across pages */
+  article {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure the summary section is visible */
+  .summary-section {
+    border-top: 1px solid #ccc !important;
+  }
+}

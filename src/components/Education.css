@@ -1,0 +1,129 @@
+.education-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.education-entry {
+  background: var(--card-background, rgba(255, 255, 255, 0.05));
+  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--primary);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.education-entry:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.education-entry:focus-within {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.education-degree {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  margin: 0;
+  flex: 1;
+  min-width: 200px;
+  line-height: var(--line-height-tight);
+}
+
+.education-duration {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary, rgba(255, 255, 255, 0.7));
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+}
+
+.education-details {
+  margin-bottom: var(--space-md);
+}
+
+.education-institution {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text);
+  margin: var(--space-xs) 0;
+}
+
+.education-location {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary, rgba(255, 255, 255, 0.7));
+  margin: var(--space-xs) 0;
+}
+
+.education-gpa,
+.education-grade {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary, rgba(255, 255, 255, 0.7));
+  margin: var(--space-xs) 0;
+  font-weight: var(--font-weight-medium);
+}
+
+.education-achievements {
+  margin-top: var(--space-md);
+}
+
+.achievements-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.achievements-list li {
+  padding-left: var(--space-xl);
+  position: relative;
+  margin-bottom: var(--space-sm);
+  color: var(--text);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+.achievements-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education-duration {
+    white-space: normal;
+  }
+
+  .education-degree {
+    font-size: var(--font-size-lg);
+  }
+}

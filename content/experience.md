@@ -13,3 +13,15 @@
 **Achievements:**
 - Improved model accuracy by 15%
 - Reduced processing time by 30%
+
+---
+
+## Research Assistant
+**Institution:** University Research Lab
+**Location:** City, Country
+**Duration:** January 2022 - May 2023
+
+**Responsibilities:**
+- Conducted research on rocket propulsion systems
+- Analyzed experimental data from fuel cell tests
+- Assisted in preparing research publications

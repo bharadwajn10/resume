@@ -1,0 +1,73 @@
+/**
+ * Theme-specific styles and transitions
+ * Provides smooth transitions when switching between Data Science and Aerospace modes
+ */
+
+/* Smooth transitions for theme switching - Requirements 3.3 */
+:root {
+  /* Transition for CSS custom properties */
+  transition: background-color 0.3s ease-in-out, 
+              color 0.3s ease-in-out;
+}
+
+/* Apply transitions to elements that use theme colors */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  transition: background-color 0.3s ease-in-out, 
+              color 0.3s ease-in-out;
+}
+
+/* Headings use theme colors and fonts */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  transition: color 0.3s ease-in-out;
+}
+
+/* Links and interactive elements */
+a {
+  color: var(--color-accent);
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+/* Buttons and controls */
+button {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border: 2px solid var(--color-primary);
+  transition: background-color 0.3s ease-in-out, 
+              color 0.3s ease-in-out,
+              border-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+/* Sections and containers */
+section {
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Ensure smooth transitions complete within 500ms as per Requirements 2.2 */
+.theme-transition {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+/* Reduce motion for users who prefer it (accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
